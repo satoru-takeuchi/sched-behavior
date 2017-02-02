@@ -1,0 +1,11 @@
+#!/bin/bash
+
+NCPU=$(grep -c processor /proc/cpuinfo)
+LASTCPU=$(($NCPU - 1))
+PATTERN="1 2 3 4"
+TOTAL_US=100000
+RESOL_US=1000
+
+for i in ${PATTERN} ; do
+    taskset --cpu-list ${LASTCPU} ./sched $i ${TOTAL_US} ${RESOL_US} >$i.txt
+done
