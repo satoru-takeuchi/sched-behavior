@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 	}
 
 	if (resol < 1) {
-		fprintf(stderr, "<resol>(%d) should be >= \n", resol);
+		fprintf(stderr, "<resol>(%d) should be >= 1\n", resol);
 		exit(EXIT_FAILURE);
 	}
 
